@@ -1,6 +1,7 @@
 import fetchCommitDetails from "../functions/fetchCommitDetails"
 import CommitFileDetails from "./CommitFileDetails"
 import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 import '../styles/commit.css'
 
 function Commit({commit, setRateLimit}){
@@ -56,7 +57,20 @@ function Commit({commit, setRateLimit}){
                     <span className="comment">{commit.message}</span>
                 </div>
             </div>
-            <CommitFileDetails commitDetails={commitDetails} toggle={toggle}/>
+            <AnimatePresence>
+            {toggle && (
+                <motion.div
+                key="commit-details"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ overflow: "hidden" }} // prevent content overflow during collapse
+                >
+                <CommitFileDetails commitDetails={commitDetails} toggle={toggle} />
+                </motion.div>
+            )}
+            </AnimatePresence>
             <span className='see-more' onClick={() => setToggle(x => !x)}>
                 {toggle ? 'hide file changes' : 'see full commit details'}
             </span>

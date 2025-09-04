@@ -2,8 +2,8 @@ import '../styles/branch-selector.css'
 
 function BranchSelector({branches, currentBranch, setCurrentBranch }){
     const unselectedStyle = {
-        backgroundColor: '#EDDDD4',
-        color: '#283D3B',
+        backgroundColor: 'rgba(242, 129, 15, .5)',
+        color: 'white',
         border: 'none',
         cursor: 'default'
     }

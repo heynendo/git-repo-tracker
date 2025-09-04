@@ -9,11 +9,11 @@ header > h1{
     height: 50px;
     margin: 0 auto;
     align-content: center;
-    color: var(--color-secondary);
+    color: white;
     cursor: default;
 }
 header > .break{
     height: 5px;
     width: 95vw;
-    background-color: var(--color-alt-primary);
+    background-color: var(--color1-05);
 }

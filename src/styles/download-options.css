@@ -13,7 +13,7 @@
 }
 
 .download-options{
-    background-color: rgb(25, 114, 120);
+    background-color: #151515;
     width: 50vw;
     height: 200px;
     max-width: 600px;
@@ -23,7 +23,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 25px;
-    border: solid 1px rgba(255, 255, 255, 0.25);
+    border: solid 1px rgba(255, 255, 255, .5);
     z-index: 11;
 }
 .download-options > .head{
@@ -36,8 +36,8 @@
     margin: 20px;
 }
 .download-options .head > h3{
-    color: var(--color-secondary);
-    font-weight: 900;
+    color: white;
+    font-weight: 700;
     font-size: 1.5em;
 }
 .download-options .head img{
@@ -48,6 +48,7 @@
     display: flex;
     justify-self: center;
     justify-content: center;
+    margin: 10px auto;
 }
 .download-options .options > div{
     display: flex;
@@ -58,17 +59,22 @@
     height: 75px;
     aspect-ratio: 1;
     border-radius: 10px;
-    border: solid 5px var(--color-accent);
+    border: solid 1px white;
     margin-bottom: 10px;
-    background-color: var(--color-alt-primary);
+    background-color: var(--color1-05);
     cursor: pointer;
-}
-.download-options .options div button > span{
-    color: var(--color-secondary);
-    font-weight: 900;
-    font-size: 1em;
     transition: 0.2s;
 }
+.download-options .options div > button:hover{
+    background-color: var(--color1-25);
+}
+.download-options .options div button > span{
+    color: rgba(255, 255, 255, .75);
+    font-weight: 900;
+    font-size: 1em;
+    transition: 0.1s;
+}
 .download-options .options div > button:hover span{
-    font-size: 1.15em;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 1);
 }

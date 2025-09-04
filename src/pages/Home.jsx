@@ -3,6 +3,7 @@ import BranchSelector from '../components/BranchSelector'
 import ArrowRight from '../assets/simpleArrow.svg'
 import '../styles/home.css'
 import { useState } from 'react'
+import { AnimatePresence, motion } from "framer-motion"
 import fetchRepoData from '../functions/fetchRepoData'
 import RateLimitWidget from '../components/RateLimitWidget'
 
@@ -44,13 +45,42 @@ function Home(){
                 <button onClick={SubmitURL}><img src={ArrowRight}/></button>
             </form>
             
-            <BranchSelector branches={branches} currentBranch={currentBranch} setCurrentBranch={setCurrentBranch}  />
-            {/*<CommitList commits={commits} currentBranch={currentBranch} />*/}
+            <AnimatePresence>
+            {branches.length > 0 && (
+                <motion.div
+                key="branch-selector"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                    delay: 0.5,
+                    duration: 0.25,
+                }}
+                >
+                <BranchSelector
+                    branches={branches}
+                    currentBranch={currentBranch}
+                    setCurrentBranch={setCurrentBranch}
+                />
+                </motion.div>
+            )}
+            </AnimatePresence>
             <div className="commit-list">
+            <AnimatePresence>
             {commits
                 ?.find(branchObj => branchObj.branch === currentBranch)?.commits
-                ?.map(commit => <Commit commit={commit} setRateLimit={setRateLimit} key={commit.sha}/>
-            )}
+                ?.map((commit, i) => (
+                    <motion.div
+                    key={commit.sha}
+                    initial={{ opacity: 0, }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0, transition: { duration: 0.15, delay: 0 } }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    >
+                    <Commit commit={commit} setRateLimit={setRateLimit} />
+                    </motion.div>
+            ))}
+            </AnimatePresence>
             </div>
             {/*<RateLimitWidget rateLimit={rateLimit} />*/}
             {error && 

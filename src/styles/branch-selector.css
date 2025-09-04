@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-self: center;
-    width: 70vw;
+    width: 85vw;
     max-width: 900px;
 }
 .branch-selector > h3{
@@ -14,7 +14,7 @@
     font-size: 1.25em;
     display: flex;
     align-items: center;
-    color: #EDDDD4;
+    color: white;
 }
 .branch-selector > .branch{
     height: 25px;
@@ -26,12 +26,12 @@
     text-align: center;
     text-transform: uppercase;
     margin-left: 5px;
-    background-color: #19727840;
-    color: #EDDDD4;
-    border: solid #EDDDD4 1px;
+    background-color: var(--color1-05);
+    color: white;
+    border: solid var(--color2-50) 1px;
     cursor: pointer;
     transition: 0.2s;
 }
 .branch-selector > .branch:hover{
-    background-color: #EDDDD420;
+    background-color: var(--color1-25);
 }

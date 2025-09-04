@@ -1,7 +1,7 @@
 .commit-file-details{
     justify-self: center;
     justify-items: center;
-    /*min-height: 250px;*/
+    width: 100%;
 }
 .commit-file-details .options{
     display: flex;
@@ -19,32 +19,31 @@
     text-align: center;
     text-transform: uppercase;
     margin-left: 5px;
-    background-color: #19727840;
-    color: #EDDDD4;
-    border: solid #EDDDD4 1px;
+    background-color: var(--color1-05);
+    color: white;
+    border: solid var(--color2-50) 1px;
     cursor: pointer;
     transition: 0.2s;
     margin-bottom: 5px;
 }
 .commit-file-details .options .filter button:hover{
-    background-color: #EDDDD420;
+    background-color: var(--color1-25);
 }
 .commit-file-details .options .filter .selected{
-    background-color: var(--color-secondary);
-    color: #283D3B;
+    background-color: var(--color2-50);
+    color: white;
     border: none;
 }
 .commit-file-details .options .filter .clear{
-    background-color: #FF3B3B80;
+    background-color: rgba(255, 102, 102, .3);
 }
 .commit-file-details .options .filter .clear:hover{
-    background-color: #FF3B3B40;
+    background-color: rgba(255, 102, 102, .75);
 }
 .commit-file-details .options .filter .selected:hover{
-    background-color: var(--color-secondary);
-    color: #283D3B;
+    background-color: var(--color2-75);
+    color: white;
     border: none;
-    opacity: 0.75;
 }
 .commit-file-details .options .download img{
     height: 90%;
@@ -54,13 +53,13 @@
 .commit-file-details > .break{
     width: 95%;
     height: 2px;
-    background: rgba(237, 221, 212, 0.75);
+    background: rgba(255, 255, 255, 0.75);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
 }
 .commit-file-details > table{
     width: 95%;
-    color: var(--color-secondary);
+    color: white;
     border-collapse: collapse;
     margin-bottom: 25px;
 }
@@ -68,7 +67,7 @@
     height: 10px;
     font-weight: 900;
     font-size: 1em;
-    color: var(--color-secondary);
+    color: white;
     cursor: pointer;
 }
 .commit-file-details table .filename{
@@ -77,16 +76,16 @@
     max-width: 400px;
 }
 .commit-file-details tbody td{
-    border-bottom: 1px solid var(--color-secondary);
+    border-bottom: 1px solid white;
 
 }
 .commit-file-details tbody td{
     height: 10px;
     font-weight: 500;
     font-size: 1em;
-    color: rgba(237, 221, 212, 0.75);
+    color: rgba(255, 255, 255, 0.75);
 }
-.commit-file-details tbody .status-added{ color: #3BFF58bf; }
-.commit-file-details tbody .status-modified{ color: #ffb43bbf;}
-.commit-file-details tbody .status-removed{ color: #FF3B3Bbf;}
-.commit-file-details tbody .status-renamed{ color: #ffb43bbf;}
+.commit-file-details tbody .status-added{ color: var(--color-added); }
+.commit-file-details tbody .status-modified{ color: var(--color-modified);}
+.commit-file-details tbody .status-removed{ color: var(--color-removed);}
+.commit-file-details tbody .status-renamed{ color: var(--color-modified);}

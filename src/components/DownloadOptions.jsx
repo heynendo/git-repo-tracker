@@ -1,6 +1,7 @@
 import '../styles/download-options.css'
 import SimpleArrow from "../assets/simpleArrow.svg"
 import { downloadJSON, downloadCSV, downloadXLSX } from "../functions/download.js"
+import { AnimatePresence, motion } from "framer-motion"
 
 function DownloadOptions({commitDetails, setDownload}){
 
@@ -8,7 +9,13 @@ function DownloadOptions({commitDetails, setDownload}){
 
     return(
         <div className='overlay' onClick={() => setDownload(false)}>
-            <div className="download-options" onClick={(e) => e.stopPropagation()}>
+            <AnimatePresence>
+            <motion.div className="download-options" onClick={(e) => e.stopPropagation()}
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 1}}
+                    exit={{ opacity: 0}}
+                    transition={{ duration: 0.2, delay: 0.1}}
+            >
                 <div className='head'>
                     <img src={SimpleArrow} 
                         className='aside'
@@ -34,7 +41,8 @@ function DownloadOptions({commitDetails, setDownload}){
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
+            </AnimatePresence>
         </div>
     )
 }

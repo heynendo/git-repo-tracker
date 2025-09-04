@@ -1,0 +1,75 @@
+.home{
+    justify-self: center;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+}
+.home > h3{
+    margin: 25px auto;
+    margin-top: 125px;
+    font-weight: 500;
+    font-size: 1.25em;
+    align-content: center;
+    color: var(--color-secondary);
+    opacity: .65;
+}
+.home > form{
+    display: flex;
+    justify-self: center;
+    height: 3em;
+    width: 60vw;
+    max-width: 800px;
+    background-color: var(--color-alt-primary);
+    border: solid 2.5px var(--color-secondary);
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.25);
+    margin: 25px auto;
+}
+.home form > input{
+    background: none;
+    border: none;
+    width: 100%;
+    text-indent: 25px;
+    font-family: 'Cabinet Grotesk';
+    color: var(--color-secondary);
+    font-size: 1.25em;
+    border-radius: 25px 0 0 25px;
+}
+.home form > input:focus{
+    outline: none;
+    border: none;
+}
+.home form > button{
+    border-radius: 0 25px 25px 0;
+    background: none;
+    border: none;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    padding: 0;
+    transition: 0.2s;
+    width: 40px;
+}
+.home form > button:focus{
+    outline: none;
+    border: none;
+    background-color: var(--color-alt-primary);
+}
+.home form > button:hover{
+    background-color: var(--color-alt-primary);
+}
+.home form button > img{
+    display: block;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    height: 65%;
+    aspect-ratio: 1;
+    transition: 0.2s;
+    align-self: center;
+    justify-self: center;
+}
+.home > .error{
+    color: var(--color-accent);
+    font-weight: 900;
+    font-size: 1.2em;
+}

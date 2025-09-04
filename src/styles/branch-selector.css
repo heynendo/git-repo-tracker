@@ -1,0 +1,37 @@
+.branch-selector{
+    margin: 10px;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    width: 70vw;
+    max-width: 900px;
+}
+.branch-selector > h3{
+    margin: 0;
+    height: 25px;
+    font-weight: 700;
+    font-size: 1.25em;
+    display: flex;
+    align-items: center;
+    color: #EDDDD4;
+}
+.branch-selector > .branch{
+    height: 25px;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95em;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 5px;
+    background-color: #19727840;
+    color: #EDDDD4;
+    border: solid #EDDDD4 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.branch-selector > .branch:hover{
+    background-color: #EDDDD420;
+}
